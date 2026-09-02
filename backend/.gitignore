@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Environment variables (CRITICAL SECURITY)
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Logs
+npm-debug.log*
+

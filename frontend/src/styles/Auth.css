@@ -1,0 +1,124 @@
+/* frontend/src/styles/Auth.css */
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* The Elegant Glass Card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 48px 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-header {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 8px;
+  margin-top: 0;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  font-size: 15px;
+  color: #718096;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Soft, modern input fields */
+.auth-input {
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-size: 15px;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.auth-input::placeholder {
+  color: #a0aec0;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #a1c4fd; /* Matches the soft blue from the logo */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(161, 196, 253, 0.2);
+}
+
+/* Elevated Submit Button */
+.auth-button {
+  background: #2d3748; /* Sleek slate color */
+  color: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(45, 55, 72, 0.15);
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(45, 55, 72, 0.25);
+  background: #1a202c;
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+/* Messaging */
+.msg-success {
+  color: #047857;
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.msg-error {
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Smooth entry animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

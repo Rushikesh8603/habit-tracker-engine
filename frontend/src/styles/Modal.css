@@ -1,0 +1,199 @@
+/* frontend/src/styles/Modal.css */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+
+.modal-container {
+  background: white; width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+
+/* Tabs */
+.modal-tabs {
+  display: flex; background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0; padding: 0 16px;
+}
+.modal-tabs .tab {
+  padding: 16px 20px; font-size: 13px; font-weight: 500;
+  color: #64748b; cursor: pointer; transition: 0.2s;
+}
+.modal-tabs .active {
+  background: white; color: #0f172a; border-bottom: 2px solid #3b82f6;
+}
+
+.modal-body {
+  padding: 10px 32px;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.form-row {
+  display: flex; align-items: center; padding: 18px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.form-row:last-child { border-bottom: none; }
+.form-row label {
+  width: 150px; font-size: 14px; font-weight: 600;
+  color: #334155; display: flex; align-items: center; gap: 8px;
+}
+
+.input-group { display: flex; gap: 12px; align-items: center; flex: 1; }
+
+/* Custom Beautiful Dropdowns & Inputs */
+.styled-input, .styled-select, .number-input {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.styled-input:focus, .styled-select:focus, .number-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Hides default ugly dropdown arrow and adds a custom sleek one */
+.styled-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394a3b8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 10px auto;
+  padding-right: 32px; /* Space for the custom arrow */
+  cursor: pointer;
+}
+
+.full-select { width: 100%; }
+.number-input { width: 70px; }
+
+/* The Main Header Input */
+.main-input-row { border-bottom: 2px solid #f1f5f9; padding-bottom: 24px; }
+.habit-name-input {
+  flex: 1; border: none; font-size: 20px; font-weight: 600;
+  outline: none; padding: 8px 16px; color: #0f172a;
+}
+.habit-name-input::placeholder { color: #cbd5e1; font-weight: 500; }
+.magic-fill {
+  color: #a855f7; font-size: 13px; font-weight: 600; cursor: pointer;
+  background: rgba(168, 85, 247, 0.1); padding: 6px 12px; border-radius: 20px;
+}
+.magic-fill:hover { background: rgba(168, 85, 247, 0.2); }
+
+/* Custom Clickable Chips for Time of Day */
+.chip-group { display: flex; gap: 12px; }
+.time-chip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px; font-weight: 500;
+  color: #64748b; cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.time-chip:hover { border-color: #cbd5e1; background: #f8fafc; }
+.time-chip.active {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Dynamic Reminder Box */
+.reminder-box {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 8px; flex: 1;
+  background: white;
+}
+.active-reminder {
+  background: #f1f5f9; padding: 6px 10px; border-radius: 6px;
+  font-size: 13px; display: flex; align-items: center; gap: 8px;
+  color: #334155; font-weight: 500;
+}
+.active-reminder strong { cursor: pointer; color: #94a3b8; }
+.active-reminder strong:hover { color: #ef4444; }
+.borderless-input {
+  border: none; outline: none; padding-left: 8px; flex: 1;
+  min-width: 120px; font-size: 13px; background: transparent;
+}
+
+/* Footer Buttons */
+.modal-footer {
+  display: flex; justify-content: flex-end; gap: 16px;
+  padding: 20px 32px; background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+.btn-cancel {
+  background: white; border: 1px solid #e2e8f0;
+  padding: 10px 20px; border-radius: 8px; cursor: pointer;
+  font-weight: 600; color: #475569;
+}
+.btn-save {
+  background: #e2e8f0; color: #94a3b8; border: none;
+  padding: 10px 24px; border-radius: 8px; cursor: not-allowed;
+  font-weight: 600; transition: all 0.2s;
+}
+.btn-save.ready {
+  background: #3b82f6; color: white; cursor: pointer; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+.btn-save.ready:hover { background: #2563eb; }
+
+
+
+
+/* Custom Dropdown Overlays (Repeat Feature) */
+.custom-dropdown-container { position: relative; flex: 1; }
+.custom-dropdown-trigger { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.custom-dropdown-menu {
+  position: absolute; top: 100%; left: 0; right: 0; margin-top: 4px;
+  background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); z-index: 50; max-height: 200px; overflow-y: auto;
+}
+.dropdown-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 16px;
+  cursor: pointer; font-size: 14px; border-bottom: 1px solid #f1f5f9;
+}
+.dropdown-item:hover { background: #f8fafc; }
+
+/* Bad Habit Header & Toggle Buttons */
+.bad-habit-header { display: flex; align-items: center; justify-content: space-between; }
+.blue-icon { background: #e0f2fe; color: #3b82f6; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+
+.toggle-group {
+  display: flex; background: #f1f5f9; border-radius: 8px; padding: 4px;
+}
+.toggle-btn {
+  background: transparent; border: none; padding: 6px 16px; border-radius: 6px;
+  font-size: 13px; font-weight: 600; color: #64748b; cursor: pointer; transition: all 0.2s;
+}
+.toggle-btn.active { background: white; color: #0f172a; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+/* Stacked Labels for "No more than" */
+.stacked-label { display: flex; flex-direction: column; gap: 2px; align-items: flex-start !important; }
+.label-main { display: flex; align-items: center; gap: 8px; }
+.label-sub { font-size: 11px; color: #94a3b8; font-weight: 400; padding-left: 24px; }
+
+/* Checklist Items */
+.checklist-item {
+  display: flex; justify-content: space-between; padding: 8px; background: #f8fafc;
+  border-radius: 6px; font-size: 13px; color: #334155; margin-bottom: 4px;
+}
+.checklist-item strong { cursor: pointer; color: #94a3b8; }
+.checklist-item strong:hover { color: #ef4444; }
+
+/* Grid Button specific for Bad Habits */
+.add-actions-group { display: flex; gap: 24px; margin-top: 16px; }
+.add-habit-trigger.bad-habit { color: #ef4444; }
+.add-habit-trigger.bad-habit:hover { background: #fef2f2; }
+
+

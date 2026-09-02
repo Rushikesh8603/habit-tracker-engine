@@ -1,0 +1,351 @@
+/* =========================================
+   1. MAIN CONTAINER & DASHBOARD LAYOUT
+========================================= */
+.list-view-container {
+  padding: 24px 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.add-actions-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.add-habit-trigger {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 12px 16px;
+  background: white;
+  border: 1px dashed #bfdbfe;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.add-habit-trigger:hover { 
+    background: #eff6ff; 
+}
+
+.add-habit-trigger.bad-habit {
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+.add-habit-trigger.bad-habit:hover {
+    background: #fef2f2;
+}
+
+.plus-icon { 
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.habit-section {
+    margin-bottom: 40px;
+}
+
+.habit-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* =========================================
+   2. HABIT CARD (PREMIUM EYE-CATCHY DESIGN)
+========================================= */
+.habit-card {
+    position: relative; /* Needed for the accent line */
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 24px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden; /* Keeps the accent line neat inside the rounded corners */
+}
+
+/* Float effect on hover */
+.habit-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* ✨ The Glowing Edge Accent */
+.card-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    transition: opacity 0.3s ease;
+}
+
+.good-habit-card .card-accent {
+    background: linear-gradient(180deg, #3b82f6, #10b981); /* Blue to Green */
+}
+
+.bad-habit-card .card-accent {
+    background: linear-gradient(180deg, #ef4444, #f97316); /* Red to Orange */
+}
+
+/* Completed State - fades out the accent and greys the card */
+.habit-card.completed {
+    background: #f8fafc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.habit-card.completed .card-accent {
+    opacity: 0.3;
+    background: #94a3b8; 
+}
+
+
+/* =========================================
+   3. THE CHECKBOX (GRADIENT DESIGN)
+========================================= */
+.toggle-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background: #f8fafc;
+    color: transparent; 
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.2s ease-out;
+}
+
+/* Hover: Unchecked */
+.toggle-action-btn.complete:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: scale(1.1);
+}
+
+/* Checked State (Beautiful Green Fill) */
+.toggle-action-btn.undo {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+/* Hover: Checked (Turns red to indicate undo) */
+.toggle-action-btn.undo:hover {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+
+/* =========================================
+   4. TEXT, TAGS, AND PILLS
+========================================= */
+.habit-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.habit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.habit-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    transition: color 0.2s ease;
+}
+
+/* Badges */
+.badge-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge.bad-habit {
+    background: #fef2f2;
+    color: #ef4444;
+    border: 1px solid #fee2e2;
+}
+
+.badge.area-badge {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #dcfce7;
+}
+
+/* The New "Pill" design for Goal and Repeat */
+.habit-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.meta-pill {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.meta-goal {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.meta-repeat {
+    background: #ffedd5;
+    color: #9a3412;
+}
+
+/* Extra Details (Reminders, Checklists) */
+.habit-extra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.meta-chip {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   5. COMPLETED TEXT STATES
+========================================= */
+/* Strikethrough effect when done */
+.habit-card.completed .habit-title,
+.habit-card.completed .meta-pill,
+.habit-card.completed .meta-chip {
+    text-decoration: line-through;
+    color: #94a3b8;
+    background: transparent;
+    opacity: 0.7;
+}
+
+.habit-card.completed .meta-chip {
+    border-color: transparent;
+}
+
+
+
+
+/* Container alignment */
+.add-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+/* Base button styling (Soft Emerald / Good Habit) */
+.add-habit-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Light Emerald Theme */
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.add-habit-trigger:hover {
+    background-color: #dcfce7;
+    border-color: #86efac;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(22, 101, 52, 0.08);
+}
+
+.add-habit-trigger:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Icon badge */
+.add-habit-trigger .plus-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #dcfce7;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.add-habit-trigger:hover .plus-icon {
+    background-color: #bbf7d0;
+}
+
+/* Light Rose / Bad Habit Variant */
+.add-habit-trigger.bad-habit {
+    background-color: #fff1f2;
+    color: #be123c;
+    border: 1px solid #fecdd3;
+}
+
+.add-habit-trigger.bad-habit:hover {
+    background-color: #ffe4e6;
+    border-color: #fda4af;
+    box-shadow: 0 4px 6px -1px rgba(190, 18, 60, 0.08);
+}
+
+.add-habit-trigger.bad-habit .plus-icon {
+    background-color: #ffe4e6;
+    color: #be123c;
+}
+
+.add-habit-trigger.bad-habit:hover .plus-icon {
+    background-color: #fecdd3;
+}

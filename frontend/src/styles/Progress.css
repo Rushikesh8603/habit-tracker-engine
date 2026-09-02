@@ -1,0 +1,232 @@
+/* frontend/src/styles/Progress.css */
+
+.progress-container {
+    padding: 24px 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 100px;
+}
+
+.progress-page-title {
+    margin-bottom: 32px;
+}
+
+.progress-page-title h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+}
+
+.progress-page-title p {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* The 3-Column Header Grid */
+.progress-header-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.stat-icon.purple { background: #f3e8ff; color: #9333ea; }
+.stat-icon.blue { background: #e0f2fe; color: #0284c7; }
+.stat-icon.orange { background: #ffedd5; color: #ea580c; }
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1;
+}
+
+.stat-sub {
+    font-size: 16px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+
+/* --- PROGRESS CHARTS --- */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.chart-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    align-self: flex-start;
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 250px;
+}
+
+
+/* --- CODEFORCES HEATMAP --- */
+.cf-heatmap-container {
+    background: #ffffff;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.cf-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.cf-year-select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #d1d5da;
+    font-size: 13px;
+    outline: none;
+}
+
+/* ⬇️ NEW/UPDATED: Spacing and structural changes for Month Labels */
+.cf-grid-wrapper {
+    display: flex;
+    gap: 12px; 
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.cf-day-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 38px 0 10px 0; /* Pushed down to align with the grid */
+    font-size: 11px;
+    color: #767676;
+    height: 105px;
+}
+
+.cf-grid-inner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cf-months {
+    position: relative;
+    height: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.cf-month-label {
+    position: absolute;
+    font-size: 11px;
+    color: #767676;
+    bottom: 0;
+}
+
+.cf-grid {
+    display: grid;
+    grid-template-rows: repeat(7, 13px);
+    grid-auto-flow: column; 
+    gap: 3px;
+}
+
+.cf-square {
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+}
+
+.cf-square.placeholder {
+    visibility: hidden;
+}
+
+/* Stats Layout Matching the Screenshot */
+.cf-stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+.cf-stat-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.cf-stat-number {
+    font-size: 22px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 4px;
+}
+
+.cf-stat-label {
+    font-size: 12px;
+    color: #767676;
+}
+
