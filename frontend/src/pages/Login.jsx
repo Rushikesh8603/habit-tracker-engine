@@ -18,7 +18,7 @@ export default function Login() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/login', formData, { withCredentials: true });
+      const response = await axios.post(import.meta.env.VITE_API_URL + '/api/auth/login', formData);
       
       const { accessToken, user } = response.data;
 

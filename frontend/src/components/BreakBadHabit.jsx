@@ -37,16 +37,16 @@ export default function BreakBadHabit({ onClose, existingHabit, onDelete }) {
       if (existingHabit) {
         // Edit existing bad habit
         await axios.put(
-          `http://localhost:5001/api/habits/${existingHabit._id}`, 
+          `/api/habits/${existingHabit._id}`, 
           dataToSend, 
-          { withCredentials: true }
+         
         );
       } else {
         // Create new bad habit
         await axios.post(
-          'http://localhost:5001/api/habits', 
+          import.meta.env.VITE_API_URL + '/api/habits', 
           dataToSend, 
-          { withCredentials: true }
+         
         );
       }
 

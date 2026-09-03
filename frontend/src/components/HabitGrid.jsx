@@ -20,7 +20,7 @@ export default function HabitGrid({ timeFilter = 'all' }) {
     // Fetch habits from backend on load
     const fetchHabits = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/api/habits', { withCredentials: true });
+            const response = await axios.get(import.meta.env.VITE_API_URL + '/api/habits');
             setHabits(response.data);
         } catch (error) {
             console.error("Failed to load habits", error);
@@ -53,9 +53,9 @@ export default function HabitGrid({ timeFilter = 'all' }) {
     const handleToggle = async (id) => {
         try {
             await axios.put(
-                `http://localhost:5001/api/habits/${id}/toggle`, 
+                `/api/habits/${id}/toggle`, 
                 { date: today }, 
-                { withCredentials: true }
+               
             );
             fetchHabits(); 
         } catch (error) {

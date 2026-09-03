@@ -16,7 +16,7 @@ export default function Register() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5001/api/auth/register', formData);
+      const response = await axios.post(import.meta.env.VITE_API_URL + '/api/auth/register', formData);
       setMessage(response.data.message);
       setFormData({ username: '', email: '', password: '' });
       navigate('/login');

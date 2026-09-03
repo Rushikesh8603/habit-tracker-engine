@@ -112,17 +112,17 @@ export default function AddHabitModal({ onClose, habitType, existingHabit }) {
             if (existingHabit) {
                 // We are EDITING an existing habit
                 await axios.put(
-                    `http://localhost:5001/api/habits/${existingHabit._id}`,
+                    `/api/habits/${existingHabit._id}`,
                     dataToSend,
-                    { withCredentials: true }
+                   
                 );
                 setStatusMessage({ text: 'Habit updated successfully! 🎉', type: 'success' });
             } else {
                 // We are CREATING a new habit
                 await axios.post(
-                    'http://localhost:5001/api/habits',
+                    import.meta.env.VITE_API_URL + '/api/habits',
                     dataToSend,
-                    { withCredentials: true }
+                   
                 );
                 setStatusMessage({ text: 'Habit saved successfully! 🎉', type: 'success' });
             }
@@ -150,8 +150,8 @@ export default function AddHabitModal({ onClose, habitType, existingHabit }) {
         try {
             // 2. Send the DELETE request to your Express backend
             await axios.delete(
-                `http://localhost:5001/api/habits/${existingHabit._id}`,
-                { withCredentials: true }
+                `/api/habits/${existingHabit._id}`,
+               
             );
 
             // 3. Instantly close the modal (which triggers a refresh in HabitGrid)
